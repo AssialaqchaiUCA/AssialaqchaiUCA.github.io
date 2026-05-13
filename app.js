@@ -73,15 +73,15 @@ $(document).ready(function () {
 
   $(window).on('scroll.navbar', function () {
     if ($(this).scrollTop() > 50) {
-      $('#navbar').css('background', 'rgba(5, 11, 20, 0.97)');
+$('#navbar').css('background', 'rgba(13, 10, 26, 0.97)');  
     } else {
-      $('#navbar').css('background', 'rgba(5, 11, 20, 0.85)');
+      $('#navbar').css('background', 'rgba(13, 10, 26, 0.90)');
     }
   });
   const titles = [
     'Étudiant en Informatique',
     'Développeur Web Front-End',
-    'DESIGNER UI/UX',
+    'Designer UI/UX',
     'En formation ANALYSE DES DONNÉES',
   ];
 

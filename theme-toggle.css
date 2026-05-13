@@ -153,6 +153,7 @@ body.light-mode .terminal-line           { border-bottom-color: rgba(123,66,255,
 body.light-mode a       { color: #5E2FCC; }
 body.light-mode a:hover { color: #ff00a0; text-shadow: 0 0 6px rgba(255,0,160,0.3); }
 
+
 body.light-mode .section-title {
   color: #7B42FF;
   text-shadow: 0 0 10px rgba(123,66,255,0.3);
@@ -160,6 +161,8 @@ body.light-mode .section-title {
 body.light-mode .section-num  { color: #ff00a0; opacity: 0.9; }
 body.light-mode .section-line { background: linear-gradient(90deg, #7B42FF, #ff00a0); opacity: 0.35; height: 1.5px; }
 
+
+/*CARTES */
 body.light-mode .neon-card {
   background: #FFFFFF;
   border: 1.5px solid rgba(123,66,255,0.25);
@@ -177,6 +180,8 @@ body.light-mode .neon-card:hover {
 }
 body.light-mode .card-corner-tag { color: #7B42FF; opacity: 0.65; }
 
+
+/* BOUTONS */
 body.light-mode .btn-primary {
   background: linear-gradient(135deg, #7B42FF, #5E2FCC);
   color: #FFFFFF;
@@ -207,6 +212,8 @@ body.light-mode .btn-cyber::after {
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
 }
 
+
+/* BADGES */
 body.light-mode .badge-cyan {
   background: rgba(123,66,255,0.1);
   border: 1px solid #7B42FF;
@@ -223,6 +230,8 @@ body.light-mode .badge-gold {
   color: #8a6200;
 }
 
+
+/* À PROPOS — stats en violet/magenta/or */
 body.light-mode .stat-item:nth-child(1) .stat-num { color: #7B42FF; text-shadow: 0 0 8px rgba(123,66,255,0.3); }
 body.light-mode .stat-item:nth-child(2) .stat-num { color: #ff00a0; text-shadow: 0 0 8px rgba(255,0,160,0.28); }
 body.light-mode .stat-item:nth-child(3) .stat-num { color: #b8860b; text-shadow: 0 0 8px rgba(184,134,11,0.25); }
@@ -230,6 +239,8 @@ body.light-mode .stat-num  { text-shadow: none; }
 body.light-mode .stat-label { color: #7A72A0; }
 body.light-mode .about-text p { color: #3D3060; }
 
+
+/* SKILLS — violet pour les filtres, dégradé violet → magenta */
 body.light-mode .filter-btn {
   border: 1.5px solid rgba(123,66,255,0.3);
   color: #3D3060;

@@ -65,7 +65,7 @@
   justify-content: space-between;
   padding: 0.75rem var(--space-md);
 
-  background: rgba(5, 11, 20, 0.85);
+  background: rgba(13, 10, 26, 0.90);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0, 243, 255, 0.2);
 }

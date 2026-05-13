@@ -31,21 +31,11 @@
 </head>
 <body>
 
-  <!-- ============================================================
-       - #scanlines    : overlay scanlines (lignes de balayage CRT)
-       - #grid-floor   : grille en perspective qui défile
-       - #particles    : canvas JS pour les étoiles/particules
-       ============================================================ -->
   <div id="scanlines"></div>
   <div id="grid-floor"></div>
   <canvas id="particles"></canvas>
 
-  <!-- ============================================================
-       BOUTON DARK / LIGHT MODE 
-       Positionné fixe en bas à droite par theme-toggle.css.
-       - data-tooltip : texte du tooltip (mis à jour par jQuery)
-       - innerHTML    : icône (☀ ou ☽, mise à jour par jQuery)
-       ============================================================ -->
+
   <button
     id="theme-toggle-btn"
     aria-label="Basculer entre dark mode et light mode"
@@ -54,10 +44,6 @@
     ☀
   </button>
 
-  <!-- ============================================================
-       NAVIGATION FIXE (barre de menu en haut)
-       Chaque lien ancre vers une section via son id
-       ============================================================ -->
   <nav id="navbar">
     <div class="nav-logo">// PORTFOLIO</div>
     <ul class="nav-links">
@@ -165,7 +151,7 @@
 
         <div class="about-stats">
           <div class="stat-item neon-card">
-            <div class="stat-num counter" data-target="4">0</div>
+            <div class="stat-num counter" data-target="3">0</div>
             <div class="stat-label">PROJETS</div>
           </div>
           <div class="stat-item neon-card">
@@ -302,7 +288,7 @@
        ============================================================ -->
   <footer id="footer">
     <div class="footer-line"></div>
-    <p>// CV_SYS &copy; <span id="year"></span> — CONSTRUIT AVEC HTML · CSS · JQUERY · REACT</p>
+    <p>// PORTFOLIO &copy; <span id="year"></span> — CONSTRUIT AVEC HTML · CSS · JQUERY · REACT</p>
     <p class="footer-sub">TOUS DROITS RÉSERVÉS — ASSIA LAQCHAI </p>
   </footer>
 
