@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LAQCHAI ASSIA </title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="theme.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme-toggle.css" />
+
+  <script>
+    
+    (function () {
+      const saved = localStorage.getItem('cv-theme-mode');
+      const systemLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (saved === 'light' || (!saved && systemLight)) {
+        document.documentElement.classList.add('light-mode-init');
+      }
+    })();
+  </script>
+
+  <style>
+
+    html.light-mode-init body {
+      background-color: #f0f4f8 !important;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- ============================================================
+       - #scanlines    : overlay scanlines (lignes de balayage CRT)
+       - #grid-floor   : grille en perspective qui défile
+       - #particles    : canvas JS pour les étoiles/particules
+       ============================================================ -->
+  <div id="scanlines"></div>
+  <div id="grid-floor"></div>
+  <canvas id="particles"></canvas>
+
+  <!-- ============================================================
+       BOUTON DARK / LIGHT MODE 
+       Positionné fixe en bas à droite par theme-toggle.css.
+       - data-tooltip : texte du tooltip (mis à jour par jQuery)
+       - innerHTML    : icône (☀ ou ☽, mise à jour par jQuery)
+       ============================================================ -->
+  <button
+    id="theme-toggle-btn"
+    aria-label="Basculer entre dark mode et light mode"
+    data-tooltip="LIGHT MODE"
+  >
+    ☀
+  </button>
+
+  <!-- ============================================================
+       NAVIGATION FIXE (barre de menu en haut)
+       Chaque lien ancre vers une section via son id
+       ============================================================ -->
+  <nav id="navbar">
+    <div class="nav-logo">// PORTFOLIO</div>
+    <ul class="nav-links">
+      <li><a href="#header"    class="nav-link active">PROFIL</a></li>
+      <li><a href="#about"     class="nav-link">À PROPOS</a></li>
+      <li><a href="#skills"    class="nav-link">SKILLS</a></li>
+      <li><a href="#formation" class="nav-link">FORMATION</a></li>
+      <li><a href="#projects"  class="nav-link">PROJETS</a></li>
+      <li><a href="#contact"   class="nav-link">CONTACT</a></li>
+    </ul>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span class="status-text">SYS_ONLINE</span>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1 : HEADER 
+       ============================================================ -->
+  <header id="header" class="section">
+    <div class="container header-grid">
+
+      <div class="header-photo-wrap">
+        <div class="data-card-label">// DATA CARD</div>
+        <div class="photo-frame">
+          <img src="photo.jpg" alt="Photo de profil" id="profile-photo" />
+          <div class="photo-overlay"></div>
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+
+        <div class="status-badges">
+          <span class="badge badge-cyan">STATUS : ÉTUDIANTE</span>
+          <span class="badge badge-mag">L2 SINF</span>
+        </div>
+      </div>
+
+      <div class="header-info">
+        <!-- Ligne décorative avant le nom (style ticker) -->
+        <div class="pre-title">// IDENTITY_FILE_LOADED &gt;&gt;</div>
+
+        <!-- effet glitch -->
+        <h1 class="glitch-text" data-text="Laqchai Assia">LAQCHAI ASSIA</h1>
+
+        <!-- effet typing jQuery -->
+        <div class="typing-wrap">
+          <span class="typing-prefix">$ </span>
+          <span id="typing-title" class="typing-target"></span>
+          <span class="cursor-blink">_</span>
+        </div>
+
+        <!-- Coordonnées  -->
+        <div class="contact-terminal">
+          <div class="terminal-line">
+            <i class="fa fa-envelope"></i>
+            <a href="mailto:laqchaia@gmail.com" target="_blank">laqchaia@gmail.com</a>
+          </div>
+          <div class="terminal-line">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/assia-laqchai-190630370" target="_blank">linkedin.com/in/assia-laqchai-190630370</a>
+          </div>
+          <div class="terminal-line">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/Aieunoia" target="_blank">github.com/Aieunoia</a>
+          </div>
+        </div>
+
+        <!-- Bouton CTA principal -->
+        <a href="#projects" class="btn-cyber btn-primary">
+          <span>VOIR PROJETS</span>
+          <i class="fa fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn-cyber btn-secondary">
+          <span>ME CONTACTER</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SECTION 2 : À PROPOS
+       ============================================================ -->
+  <section id="about" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">À PROPOS</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text neon-card">
+          <div class="card-corner-tag">Je construis ce qui n'existe pas encore</div>
+          <p>
+            Étudiant en Licence 2 Informatique passionné par le développement web et l'analyse des données.
+            Mon parcours m'a conduit à explorer le front-end avec enthousiasme, de HTML/CSS aux frameworks modernes
+            comme React. Je crois que le code est un art, et que chaque projet est une opportunité de créer quelque
+            chose d'unique. En dehors du code, je m'intéresse à l'analyse des données, au design UI/UX . Mon objectif : devenir développeur full-stack et contribuer à des projets innovants.
+          </p>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-item neon-card">
+            <div class="stat-num counter" data-target="4">0</div>
+            <div class="stat-label">PROJETS</div>
+          </div>
+          <div class="stat-item neon-card">
+            <div class="stat-num counter" data-target="1">0</div>
+            <div class="stat-label">ANS CODE</div>
+          </div>
+          <div class="stat-item neon-card">
+            <div class="stat-num counter" data-target="6">0</div>
+            <div class="stat-label">LANGAGES</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 : COMPÉTENCES
+       ============================================================ -->
+  <section id="skills" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">COMPÉTENCES</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div id="skills-filter" class="filter-bar">
+        <button class="filter-btn active" data-filter="all">TOUS</button>
+        <button class="filter-btn" data-filter="frontend">FRONTEND</button>
+        <button class="filter-btn" data-filter="backend">BACKEND</button>
+        <button class="filter-btn" data-filter="tools">OUTILS</button>
+      </div>
+
+      <div id="react-skills"></div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 : FORMATION
+       ============================================================ -->
+  <section id="formation" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">FORMATION</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item" data-wow="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content neon-card accordion-header">
+            <div class="tl-year">2026 — EN COURS</div>
+            <h3 class="tl-title">Licence Informatique — L2</h3>
+            <div class="tl-school">FACULTE DES SCIENCES SEMLALIA</div>
+            <div class="accordion-body">
+              <p>Formation en développement web, algorithmique, bases de données et système d'exploitation.
+                 Spécialisation en programmation web avancée , structure des données en C , avec la programmation orientée objet en C++.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-wow="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content neon-card accordion-header">
+            <div class="tl-year">2024 — 2025</div>
+            <h3 class="tl-title">Licence Informatique — L1</h3>
+            <div class="tl-school">FACULTE DES SCIENCES SEMLALIA</div>
+            <div class="accordion-body">
+              <p>Fondamentaux de MATHEMATIQUES PHYSIQUE ET INFORMATIQUE : introduction à la programmation (Python, C),
+                 mathématiques discrètes,les bases de physique.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-wow="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content neon-card accordion-header">
+            <div class="tl-year">2023 — 2024</div>
+            <h3 class="tl-title">Baccalauréat Sciences PHYSIQUES</h3>
+            <div class="tl-school">Lycée ERRAHALI ELFAROUQ</div>
+            <div class="accordion-body">
+              <p>Baccalauréat obtenu avec mention. Option SCIENCE PHYSIQUE.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 : PROJETS
+       ============================================================ -->
+  <section id="projects" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">PROJETS</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div id="react-projects"></div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 : CONTACT
+       ============================================================ -->
+  <section id="contact" class="section">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2 class="section-title">CONTACT</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div id="react-contact"></div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="footer">
+    <div class="footer-line"></div>
+    <p>// CV_SYS &copy; <span id="year"></span> — CONSTRUIT AVEC HTML · CSS · JQUERY · REACT</p>
+    <p class="footer-sub">TOUS DROITS RÉSERVÉS — ASSIA LAQCHAI </p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
+  <script src="app.js"></script>
+  <script src="theme-toggle.js"></script> 
+  <script type="text/babel" src="components.js"></script>
+
+</body>
+</html>
